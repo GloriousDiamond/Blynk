@@ -1,8 +1,6 @@
-/* Fill-in information from Blynk Device Info here */
-#define BLYNK_TEMPLATE_ID "TMPL6oRY1kemi"
-
-#define BLYNK_TEMPLATE_NAME "LED Blynking"
-#define BLYNK_AUTH_TOKEN "bOgi31rOpPtI6-ioeMZUdlWX2kOXo5k9"
+#define BLYNK_TEMPLATE_ID           "TMPL6oRY1kemi"
+#define BLYNK_TEMPLATE_NAME         "LED Blynking"
+#define BLYNK_AUTH_TOKEN            "bOgi31rOpPtI6-ioeMZUdlWX2kOXo5k9"
 
 /* Comment this out to disable prints and save space */
 #define BLYNK_PRINT Serial
@@ -14,47 +12,38 @@
 // Your WiFi credentials.
 // Set password to "" for open networks.
 char ssid[] = "unais 4g";
-char pass[] = "YourPassword";
+char pass[] = "unais@122";
 
 BLYNK_WRITE(V4){
   if(param.asInt()==1){
-   digitalWrite(16,HIGH);
-}else{
-  if(param.asInt()==1){
-   digitalWrite(16,LOW);
+    digitalWrite(16,HIGH);
+  }
+  else{
+    digitalWrite(16,LOW);
+  }
 }
-}
-BLYNK_CONNECTED()
-{
-Blynk.syncVirtual(V4);
-}
-
 BLYNK_WRITE(V3){
   if(param.asInt()==1){
-   digitalWrite(4,HIGH);
-}else{
-  if(param.asInt()==1){
-   digitalWrite(4,LOW);
+    digitalWrite(5,HIGH);
+  }
+  else{
+    digitalWrite(5,LOW);
+  }
 }
-}
-BLYNK_CONNECTED()
-{
-Blynk.syncVirtual(V3);
-}
-
 BLYNK_WRITE(V2){
   if(param.asInt()==1){
-   digitalWrite(5,HIGH);
-}else{
-  if(param.asInt()==1){
-   digitalWrite(5,LOW);
-}
+    digitalWrite(4,HIGH);
+  }
+  else{
+    digitalWrite(4,LOW);
+  }
 }
 BLYNK_CONNECTED()
 {
-Blynk.syncVirtual(V2);
+  Blynk.syncVirtual(V4);
+  Blynk.syncVirtual(V3);
+  Blynk.syncVirtual(V2);
 }
-
 void setup()
 {
   // Debug console
