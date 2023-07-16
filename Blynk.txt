@@ -30,22 +30,14 @@ BLYNK_WRITE(V3){
     digitalWrite(5,LOW);
   }
 }
-BLYNK_WRITE(V2){
-  if(param.asInt()==1){
-    digitalWrite(4,HIGH);
-  }
-  else{
-    digitalWrite(4,LOW);
-  }
-}
+
 BLYNK_CONNECTED()
 {
   Blynk.syncVirtual(V4);
   Blynk.syncVirtual(V3);
-  Blynk.syncVirtual(V2);
+
 }
-void setup()
-{
+void setup(){
   // Debug console
   Serial.begin(115200);
 
@@ -53,6 +45,8 @@ void setup()
   // You can also specify server:
   //Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass, "blynk.cloud", 80);
   //Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass, IPAddress(192,168,1,100), 8080);
+  pinMode(16,OUTPUT);
+  pinMode(5,OUTPUT);
 }
 
 void loop()
