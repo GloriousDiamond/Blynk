@@ -1,6 +1,6 @@
-#define BLYNK_TEMPLATE_ID           "TMPL6oRY1kemi"
-#define BLYNK_TEMPLATE_NAME         "LED Blynking"
-#define BLYNK_AUTH_TOKEN            "bOgi31rOpPtI6-ioeMZUdlWX2kOXo5k9"
+#define BLYNK_TEMPLATE_ID           "___"
+#define BLYNK_TEMPLATE_NAME     "____"
+#define BLYNK_AUTH_TOKEN            "____"
 
 /* Comment this out to disable prints and save space */
 #define BLYNK_PRINT Serial
